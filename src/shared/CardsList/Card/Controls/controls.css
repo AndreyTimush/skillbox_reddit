@@ -9,8 +9,59 @@
     display: flex;
     flex-flow: row nowrap;
 }
+
 .actions > * + * {
     margin: 0 0 0 13px;
+}
+
+.karmaValue {
+    color: var(--greyC4);
+    font-size: 12px;
+    line-height: 14px;
+}
+
+svg.down {
+    transform: rotate(180deg);
+}
+
+.karmaCounter > * + * {
+    padding: 0 0 0 4px;
+}
+
+
+.commentsButton {
+    display: flex;
+    align-items: normal;
+}
+
+.commentsButton * {
+    color: var(--greyC4);
+}
+
+.actions {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.actions > * + * {
+    margin: 0 0 0 13px;
+}
+
+
+.commentsNumber {
+    padding: 0 0 0 6px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.shareButton {
+    width: 20px;
+    height: 20px;
+}
+
+.saveButton {
+    width: 20px;
+    height: 20px;
 }
 
 @media all and (min-width: 1024px) {
@@ -30,6 +81,7 @@
         justify-content: center;
         flex-flow: column nowrap;
     }
+
     .karmaCounter > * + * {
         padding: 7px 0 0;
     }
@@ -39,46 +91,6 @@
         line-height: 16px;
         color: var(--black);
     }
-}
-
-.karmaValue {
-    color: var(--greyC4);
-    font-size: 12px;
-    line-height: 14px;
-}
-
-svg.down {
-    transform: rotate(180deg);
-}
-
-.karmaCounter > * + * {
-    padding: 0 0 0 4px;
-}
-
-@media all and (min-width: 1540px) {
-    .karmaCounter > button.up:hover > svg > path {
-        fill: var(--green);
-    }
-
-    .karmaCounter > button.down:hover > svg > path {
-        fill: var(--orange);
-    }
-}
-
-.commentsButton {
-    display: flex;
-    align-items: normal;
-}
-.commentsButton * {
-    color: var(--greyC4);
-}
-
-.actions {
-    display: flex;
-    flex-flow: row nowrap;
-}
-.actions > * + * {
-    margin: 0 0 0 13px;
 }
 
 @media all and (min-width: 1024px) {
@@ -97,18 +109,12 @@ svg.down {
     }
 }
 
-.commentsNumber {
-    padding: 0 0 0 6px;
-    font-size: 12px;
-    line-height: 14px;
-}
+@media all and (min-width: 1540px) {
+    .karmaCounter > button.up:hover > svg > path {
+        fill: var(--green);
+    }
 
-.shareButton {
-    width: 20px;
-    height: 20px;
-}
-
-.saveButton {
-    width: 20px;
-    height: 20px;
+    .karmaCounter > button.down:hover > svg > path {
+        fill: var(--orange);
+    }
 }

@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 4px;
+    margin-top: 10px;
+}
+
+.main {
+    margin-left: 20px;
+    box-sizing: border-box;
+}
+
+.author {
+    color: var(--orange);
+    margin: 0 10px 0 10px;
+}
+
+.label {
+    color: var(--grey99);
+}
+
+.league {
+    background-color: #D9D9D9;
+    margin-left: 10px;
+}
+
+.commentFooter {
+    position: relative;
+    max-width: 350px;
+}
+
+.modalDropdown {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.menuItem {
+    padding: 12px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.commentResponseFormWrapper {
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 750px;
+}
