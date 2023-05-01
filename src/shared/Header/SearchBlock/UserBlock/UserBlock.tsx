@@ -7,9 +7,10 @@ import { EColors, Text } from "../../../Text";
 interface IUserBlockProps {
   avatarSrc?: string;
   username?: string;
+  loading?: boolean;
 }
 
-export function UserBlock({ avatarSrc, username }: IUserBlockProps) {
+export function UserBlock({ avatarSrc, username, loading }: IUserBlockProps) {
   return (
     <a
       href={
@@ -30,9 +31,15 @@ export function UserBlock({ avatarSrc, username }: IUserBlockProps) {
 
       <div className={styles.username}>
         <Break size={12} />
-        <Text size={20} color={username ? EColors.black : EColors.grey99}>
-          {username || "Аноним"}
-        </Text>
+        {loading ? (
+          <Text size={20} color={EColors.grey99}>
+            Загрузка...
+          </Text>
+        ) : (
+          <Text size={20} color={username ? EColors.black : EColors.grey99}>
+            {username || "Аноним"}
+          </Text>
+        )}
       </div>
     </a>
   );

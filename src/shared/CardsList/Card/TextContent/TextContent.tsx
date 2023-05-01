@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import styles from "./textcontent.css";
 import { postsContext } from "../../../context/postsContext";
 import { Post } from "../../../Post";
+import { Link } from "react-router-dom";
 
 interface ITextContentProps {
   title: string;
@@ -16,7 +17,6 @@ export function TextContent({
   thumbnail,
   id,
 }: ITextContentProps) {
-  const [isModalOpened, setIsModalOpened] = useState(false);
   return (
     <div className={styles.textContent}>
       <div className={styles.metaData}>
@@ -32,22 +32,9 @@ export function TextContent({
         </span>
       </div>
       <h2 className={styles.title}>
-        <a
-          href="#post-url"
-          className={styles.postLink}
-          onClick={() => {
-            setIsModalOpened(true);
-          }}>
+        <Link to="/posts/1" className={styles.postLink}>
           {title}
-        </a>
-        {isModalOpened && (
-          <Post
-            id={id}
-            onClose={() => {
-              setIsModalOpened(false);
-            }}
-          />
-        )}
+        </Link>
       </h2>
     </div>
   );

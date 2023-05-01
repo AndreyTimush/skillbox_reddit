@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "../store/reducer";
 
 interface IPostsData {
   posts?: Array<any>;
@@ -18,7 +18,6 @@ export function usePostsData() {
           headers: { Authorization: `bearer ${token}` },
         })
         .then((resp) => {
-          console.log("resp = ", resp);
           const postsData = resp.data;
           setPostsData({
             posts: [postsData.data.children].map((elem) => elem),

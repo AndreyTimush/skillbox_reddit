@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent } from "react";
 import styles from "./commentform.css";
 import { useDispatch, useSelector, useStore } from "react-redux";
-import { RootState, updateComment } from "../../store";
+import { RootState, updateComment } from "../../store/reducer";
 import { CommentForm } from "../CommentForm";
 
 export function CommentFormContainer() {
@@ -19,9 +19,9 @@ export function CommentFormContainer() {
 
   return (
     <CommentForm
-      value={value}
-      onChange={handleChange}
-      onSubmit={handleSubmit}
+    // value={value}
+    // onChange={handleChange}
+    // onSubmit={handleSubmit}
     />
   );
 }

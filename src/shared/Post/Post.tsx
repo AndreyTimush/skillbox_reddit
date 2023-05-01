@@ -5,15 +5,17 @@ import { CommentForm } from "../CommentForm";
 import { CommentsList } from "../CommentsList";
 import { useCommentsData } from "../../hooks/useCommentsData";
 import { CommentFormContainer } from "../CommentFormContainer";
+import { useNavigate } from "react-router-dom";
 
 interface IPost {
   onClose?: () => void;
-  id: string;
+  // id: string;
 }
 
 export function Post(props: IPost) {
   const ref = useRef<HTMLDivElement>(null);
-  const [comments] = useCommentsData({ id: props.id });
+  const navigate = useNavigate();
+  // const [comments] = useCommentsData({ id: props.id });
 
   useEffect(() => {
     function handleClick(event: MouseEvent) {
@@ -21,7 +23,7 @@ export function Post(props: IPost) {
         event.target instanceof Node &&
         !ref.current?.contains(event.target)
       ) {
-        props.onClose?.();
+        navigate("/posts");
       }
     }
 
@@ -60,8 +62,8 @@ export function Post(props: IPost) {
           ea enim ex laudantium odit quasi quo quod sunt voluptatem voluptatum.
         </p>
       </div>
-      <CommentFormContainer />
-      <CommentsList comments={comments} />
+      {/* <CommentFormContainer /> */}
+      {/* <CommentsList comments={comments} /> */}
     </div>,
     node
   );
